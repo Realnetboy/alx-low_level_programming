@@ -1,4 +1,4 @@
-#!/bin/bash
+
 #inculde <stdio.h>
 /**
  * main - Prints a text
