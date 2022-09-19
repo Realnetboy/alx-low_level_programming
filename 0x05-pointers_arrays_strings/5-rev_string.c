@@ -26,5 +26,7 @@ void rev_string(char *s)
                 s[j] = v1;                                                                                                              
                 j--;                                                                                                                    
                 i++;                                                                                                                    
-        }                                                                                                                               
-}
+                   putchar(*(s + len));
+        	putchar(10);  
+}                                                                                                                              
+
