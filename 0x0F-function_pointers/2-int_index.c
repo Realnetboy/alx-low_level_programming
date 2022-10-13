@@ -6,50 +6,50 @@
  *
  *  * int_index - searches for an integer
  *
- *   * @array: input integer array.
+ *   * @array: array to serch through
  *
- *    * @size: size of the array.
+ *    * @size: size of array
  *
- *     * @cmp: pointer to the function to be used
+ *     * @cmp: function used to compare
  *
- *      * to compare values.
+ *      *
  *
- *       * Return: index of the first eement for which the cmp
+ *       * Return: first index for which cmp doesn't return 0, or -1
  *
- *        * function does not return 0. If no elements matches,
- *
- *         * return -1. If size <= 0, return -1.
- *
- *          */
-
-
+ *        */
 
 int int_index(int *array, int size, int (*cmp)(int))
 
 {
 
-		int i;
+		int i, r;
 
 
 
-			if (array && cmp)
+			if (size > 0 && array && cmp)
 
 					{
 
-								if (size <= 0)
+								for (i = 0; i < size; i++)
 
-												return (-1);
+											{
 
+															r = cmp(array[i]);
 
+																		if (r)
 
-										for (i = 0; i < size; i++)
+																							break;
 
-														if (cmp(array[i]))
+																				}
 
-																			return (i);
+										if (i < size)
+
+														return (i);
 
 											}
 
 				return (-1);
 
 }
+
+
