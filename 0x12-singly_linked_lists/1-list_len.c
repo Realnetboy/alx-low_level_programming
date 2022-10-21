@@ -1,25 +1,3 @@
-1-list_len.c.txt
-Who has access
-A
-System properties
-Type
-Text
-Size
-343 bytes
-Storage used
-343 bytes
-Location
-singly_linked_lists
-Owner
-Antony Bahati
-Modified
-Oct 20, 2022 by Antony Bahati
-Opened
-11:54 AM by me
-Created
-Oct 20, 2022
-No description
-Viewers can download
 #include "lists.h"
 
 /**
