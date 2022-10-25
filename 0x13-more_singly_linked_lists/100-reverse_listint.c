@@ -1,14 +1,27 @@
-#include <stdio.h>
-
-void start_up_func(void)__attribute__((constructor));
+#include "lists.h"
 
 /**
- * start_up_func - function that get's executed before the main function
+ * reverse_listint - reverses a listint_t linked list.
+ * @head: double pointer to the start of the list
  *
- * Return: void
+ * Return: a pointer to the first node of the reversed list
  */
-void start_up_func(void)
+listint_t *reverse_listint(listint_t **head)
 {
-	printf("You're beat! and yet, you must allow,\n"
-	       "I bore my house upon my back!\n");
+	listint_t *previous, *next;
+
+	if (head == NULL || *head == NULL)
+		return (NULL);
+	if ((*head)->next == NULL)
+		return (*head);
+	previous = NULL;
+	while (*head != NULL)
+	{
+		next = (*head)->next;
+		(*head)->next = previous;
+		previous = *head;
+		*head = next;
+	}
+	*head = previous;
+	return (*head);
 }
